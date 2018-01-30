@@ -5,6 +5,10 @@
 //  Created by ginlong on 2018/1/25.
 //  Copyright © 2018年 ginlong. All rights reserved.
 //
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kSameColor [UIColor redColor]
 
 #import "ViewController.h"
 #import <Charts/Charts-Swift.h>
@@ -21,7 +25,7 @@
     [super viewDidLoad];
     self.title = @"Stacked Bar Chart";
     
-    _barChartView = [[BarChartView alloc] initWithFrame:(CGRectMake(0, 40, 375, 501))];
+    _barChartView = [[BarChartView alloc] initWithFrame:(CGRectMake(0, 100, kScreenWidth, kScreenHeight-200))];
     [self.view addSubview:_barChartView];
     _barChartView.delegate = self;
     _barChartView.chartDescription.enabled = NO;
@@ -91,12 +95,13 @@
         
         set1.drawIconsEnabled = NO;
         
-        set1.colors = @[[UIColor redColor],///保持一致
+        set1.colors = @[kSameColor, ///保持一致
                         [UIColor yellowColor],
                         [UIColor blueColor],
                         [UIColor blackColor],
                         [UIColor orangeColor],
-                        [UIColor redColor]];///保持一致
+                        kSameColor  ///保持一致
+                        ];
         set1.stackLabels = @[@"自发用电", @"电网卖电", @"电池充电", @"电网买电", @"电池放电"];
         
         NSMutableArray *dataSets = [[NSMutableArray alloc] init];
