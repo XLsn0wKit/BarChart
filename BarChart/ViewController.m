@@ -5,7 +5,7 @@
 //  Created by ginlong on 2018/1/25.
 //  Copyright © 2018年 ginlong. All rights reserved.
 //
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 #define kSameColor [UIColor redColor]
@@ -116,7 +116,7 @@
         [data setValueFont:[UIFont boldSystemFontOfSize:4]];
         [data setValueFormatter:[[ChartDefaultValueFormatter alloc] initWithFormatter:formatter]];
         [data setValueTextColor:UIColor.grayColor];
-        [data setBarWidth:0.5];
+        [data setBarWidth:0.5];///设置宽度
         
         _barChartView.fitBars = YES;
         _barChartView.data = data;
